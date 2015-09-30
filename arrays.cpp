@@ -1,21 +1,13 @@
 #include <iostream>
 #include <cassert>
 
-#if 0
-// NOTE: you should move this `if` down as you start solving each task
-
 void task_1()
 {
-    /* Task 1: find a bug in the following declaration.
-     * It should help you to compile this with:
-     *   g++ -c -pedantic arrays.cpp                                   
-     * pedantic flag here means: strictly as in language standard 
-     * for explanation see:
-     *  https://gcc.gnu.org/onlinedocs/gcc/Variable-Length.html*/
-    int n = 10;
+    const int n = 10;
     int a[n];
 }
 
+#if 0
 // Task 2
 void task_2()
 {
