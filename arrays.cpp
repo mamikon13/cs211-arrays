@@ -33,14 +33,15 @@ void task_4()
     assert(a[4] == 5);    
 }
 
-#if 0
 // Task 5
 // copy arr1 to arr2
-void task_5_copy(int * arr1, int * arr2, int size)
+void task_5_copy(const int * arr1, int * arr2, int size)
 {
-    arr2 = arr1;
+	for (int i = 0; i < size; i++)
+		arr2[i] = arr1[i];
 }
 
+#if 0
 // Task 6
 // copy array `arr1` to array `arr2` of the same size
 void task_6_poor_copy(int * arr1, int * arr2)
