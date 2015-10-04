@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdio>
+#include "arrays.h"
 
 using namespace std;
 
@@ -36,6 +37,38 @@ int main()
 	
 	cout << ", white space = " << nwhite 
 		 << ", other = " << nother << endl;
+
+	// Ниже реализация рисования столбиковой диаграммы
+	cout << '\n' << '\n';
+
+	int maxCount = 0; // Наиболее часто встретившийся элемент
+	for (i = 0; i < size; i++)
+	{
+		if (ndigit[i] > maxCount)
+			maxCount = ndigit[i];
+	}
+	if (nwhite > maxCount)
+		maxCount = nwhite;
+	if (nother > maxCount)
+		maxCount = nother;
+
+	for (i = maxCount; i > 0; i--) // Цикл по пробегу частот встреч
+	{
+		if (i < 10) // Пробелы после значения частоты
+		    cout << i << "  ";
+		else
+			cout << i << " ";
+		for (int j = 0; j < size + 2; j++) // Цикл по пробегу всех встретившихся символов
+		{
+			if (ndigit[j] >= i || (nwhite >= i && j == size) || (nother >= i && j == size + 1))
+				cout << "+ "; // "+" - закрашено
+			else cout << "  "; // " " - не закрашено
+		}
+		cout << endl;
+	}
+	cout << "   0 1 2 3 4 5 6 7 8 9 _ c";
+	
+	cout << '\n' << '\n';
 
 	system("pause");
 }
