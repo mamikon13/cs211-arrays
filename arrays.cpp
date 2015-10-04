@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include "arrays.h"
 
 void task_1()
 {
